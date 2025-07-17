@@ -11,6 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health Check
+app.get("/api/health", (req, res) => {
+    res.status(200).json({ message: "Server is up and running" });
+});
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/todos", authenticateToken, todoRoutes);
