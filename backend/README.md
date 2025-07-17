@@ -17,9 +17,22 @@ A simple Node.js/Express backend for a todo application with JWT authentication.
     JWT_SECRET=your_jwt_secret_key_here
     ```
 
-3. Start the development server:
+3. Choose how to run the server:
+
+    ### Development Mode
+
     ```bash
     npm run dev
+    ```
+
+    ### Production Mode
+
+    ```bash
+    # Build the project
+    npm run build
+
+    # Start the production server
+    npm run start:prod
     ```
 
 ## API Endpoints
@@ -72,6 +85,33 @@ Authorization: Bearer your_jwt_token_here
 
 -   **DELETE** `/api/todos/:id`
 -   **Response:** `{ "message": "Todo deleted successfully" }`
+
+## Build and Deployment
+
+### Building for Production
+
+1. Run the build command:
+
+    ```bash
+    npm run build
+    ```
+
+    This will:
+
+    - Clean the `dist` directory
+    - Copy all source files to the `dist` directory
+
+2. Start the production server:
+    ```bash
+    npm run start:prod
+    ```
+
+### Production Considerations
+
+-   Set appropriate environment variables in production
+-   Use process managers like PM2 for better process management
+-   Set up proper logging and monitoring
+-   Consider using Docker for containerization
 
 ## Notes
 
