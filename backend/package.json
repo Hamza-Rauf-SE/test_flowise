@@ -6,8 +6,8 @@
     "scripts": {
         "start": "node src/index.js",
         "dev": "nodemon src/index.js",
-        "clean": "rimraf dist",
-        "copy-files": "copyfiles -u 1 \"src/**/*\" \"src/*\" dist",
+        "clean": "rm -rf dist || rd /s /q dist",
+        "copy-files": "mkdir -p dist && cp -r src/* dist/",
         "build": "npm run clean && npm run copy-files",
         "start:prod": "node dist/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,8 +23,6 @@
         "jsonwebtoken": "^9.0.2"
     },
     "devDependencies": {
-        "copyfiles": "^2.4.1",
-        "nodemon": "^3.1.10",
-        "rimraf": "^6.0.1"
+        "nodemon": "^3.1.10"
     }
 }
