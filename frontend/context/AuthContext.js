@@ -1,7 +1,10 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3002";
+
+// Debug log
+console.log("Auth Context API_BASE_URL:", process.env.NEXT_PUBLIC_API_BASE_URL);
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);

@@ -46,4 +46,3 @@ frontend/node_modules/@swc/helpers/package.json
 # typescript
 /frontend/*.tsbuildinfo
 /frontend/next-env.d.ts
-
